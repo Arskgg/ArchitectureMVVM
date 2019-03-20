@@ -1,4 +1,4 @@
-package com.arskgg.architecturemvvm.Activity;
+package com.arskgg.architecturemvvm.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
