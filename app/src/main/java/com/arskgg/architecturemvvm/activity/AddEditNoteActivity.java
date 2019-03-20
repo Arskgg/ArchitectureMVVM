@@ -33,7 +33,7 @@ public class AddEditNoteActivity extends AppCompatActivity {
         numberPicker = findViewById(R.id.numberPicker);
 
         numberPicker.setMinValue(1);
-        numberPicker.setMinValue(10);
+        numberPicker.setMaxValue(10);
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
 
