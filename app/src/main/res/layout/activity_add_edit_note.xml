@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="10dp"
-    tools:context=".activity.AddNoteActivity">
+    tools:context=".activity.AddEditNoteActivity">
 
     <EditText
         android:id="@+id/titleEdt"
@@ -34,6 +34,6 @@
     <NumberPicker
         android:id="@+id/numberPicker"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></NumberPicker>
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>

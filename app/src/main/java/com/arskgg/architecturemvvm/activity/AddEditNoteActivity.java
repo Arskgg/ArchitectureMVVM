@@ -13,8 +13,9 @@ import android.widget.Toast;
 
 import com.arskgg.architecturemvvm.R;
 
-public class AddNoteActivity extends AppCompatActivity {
+public class AddEditNoteActivity extends AppCompatActivity {
 
+    public static final String EXTRA_ID = "com.arskgg.architecturemvvm.EXTRA_ID";
     public static final String EXTRA_TITLE = "com.arskgg.architecturemvvm.EXTRA_TITLE";
     public static final String EXTRA_DESCRIPTION = "com.arskgg.architecturemvvm.EXTRA_DESCRIPTION";
     public static final String EXTRA_PRIORITY = "com.arskgg.architecturemvvm.EXTRA_PRIORITY";
@@ -25,7 +26,7 @@ public class AddNoteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_note);
+        setContentView(R.layout.activity_add_edit_note);
 
         titleEdt = findViewById(R.id.titleEdt);
         descriptionEdt = findViewById(R.id.descriptionEdt);
@@ -35,7 +36,17 @@ public class AddNoteActivity extends AppCompatActivity {
         numberPicker.setMinValue(10);
 
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_close);
-        setTitle("Add Note");
+
+        Intent intent = getIntent();
+
+        if (intent.hasExtra(EXTRA_ID)) {
+            setTitle("Edit Note");
+
+            titleEdt.setText(intent.getStringExtra(EXTRA_TITLE));
+            descriptionEdt.setText(intent.getStringExtra(EXTRA_DESCRIPTION));
+            numberPicker.setValue(intent.getIntExtra(EXTRA_DESCRIPTION, 1));
+        } else
+            setTitle("Add Note");
     }
 
     @Override
@@ -75,6 +86,11 @@ public class AddNoteActivity extends AppCompatActivity {
         data.putExtra(EXTRA_TITLE, title);
         data.putExtra(EXTRA_DESCRIPTION, description);
         data.putExtra(EXTRA_PRIORITY, priority);
+
+        int id = getIntent().getIntExtra(EXTRA_ID, -1);
+        if (id != -1) {
+            data.putExtra(EXTRA_ID, id);
+        }
 
         setResult(RESULT_OK, data);
         finish();
