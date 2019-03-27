@@ -1,4 +1,4 @@
-package com.arskgg.architecturemvvm.adapters;
+package com.arskgg.architecturemvvm.ui.adapters;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.arskgg.architecturemvvm.R;
-import com.arskgg.architecturemvvm.data.model.Note;
+import com.arskgg.architecturemvvm.data.local.model.Note;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,16 +44,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         return notes.size();
     }
 
-    public void setNotes(List<Note> notes) {
-
-        this.notes = notes;
-        notifyDataSetChanged();
-    }
-
-    public Note getNoteAt(int position) {
-        return notes.get(position);
-    }
-
 
     class NoteViewHolder extends RecyclerView.ViewHolder {
 
@@ -84,4 +74,15 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     public void setOnItemClickListener(OnItemClickListener listener) {
         this.listener = listener;
     }
+
+    public void setNotes(List<Note> notes) {
+
+        this.notes = notes;
+        notifyDataSetChanged();
+    }
+
+    public Note getNoteAt(int position) {
+        return notes.get(position);
+    }
+
 }

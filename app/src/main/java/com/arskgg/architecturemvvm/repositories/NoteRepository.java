@@ -3,9 +3,9 @@ package com.arskgg.architecturemvvm.repositories;
 import android.app.Application;
 import android.os.AsyncTask;
 
-import com.arskgg.architecturemvvm.data.model.Note;
-import com.arskgg.architecturemvvm.data.dao.NoteDao;
-import com.arskgg.architecturemvvm.data.NoteDatabase;
+import com.arskgg.architecturemvvm.data.local.dao.NoteDao;
+import com.arskgg.architecturemvvm.data.local.model.Note;
+import com.arskgg.architecturemvvm.data.local.NoteDatabase;
 
 import java.util.List;
 

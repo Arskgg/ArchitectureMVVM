@@ -1,4 +1,4 @@
-package com.arskgg.architecturemvvm.activity;
+package com.arskgg.architecturemvvm.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,9 +9,9 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.arskgg.architecturemvvm.R;
-import com.arskgg.architecturemvvm.adapters.NoteAdapter;
-import com.arskgg.architecturemvvm.data.model.Note;
-import com.arskgg.architecturemvvm.viewmodels.NoteViewModel;
+import com.arskgg.architecturemvvm.ui.adapters.NoteAdapter;
+import com.arskgg.architecturemvvm.data.local.model.Note;
+import com.arskgg.architecturemvvm.viewModels.NoteViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
@@ -148,6 +148,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.deleteAllNotes:
                 noteViewModel.deleteAllNotes();
                 break;
+
+            case R.id.goToGitProjects:
+                startActivity(new Intent(MainActivity.this, GitProjectsActivity.class));
+                break;
+
         }
 
         return super.onOptionsItemSelected(item);

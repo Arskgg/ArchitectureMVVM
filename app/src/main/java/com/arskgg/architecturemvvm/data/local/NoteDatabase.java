@@ -1,10 +1,10 @@
-package com.arskgg.architecturemvvm.data;
+package com.arskgg.architecturemvvm.data.local;
 
 import android.content.Context;
 import android.os.AsyncTask;
 
-import com.arskgg.architecturemvvm.data.dao.NoteDao;
-import com.arskgg.architecturemvvm.data.model.Note;
+import com.arskgg.architecturemvvm.data.local.dao.NoteDao;
+import com.arskgg.architecturemvvm.data.local.model.Note;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -23,7 +23,8 @@ public abstract class NoteDatabase extends RoomDatabase {
 
         if (instance == null) {
             instance = Room.databaseBuilder(context.getApplicationContext(),
-                    NoteDatabase.class, "note_database")
+                    NoteDatabase.class,
+                    "note_database")
                     .fallbackToDestructiveMigration()
                     .addCallback(roomCallback)
                     .build();

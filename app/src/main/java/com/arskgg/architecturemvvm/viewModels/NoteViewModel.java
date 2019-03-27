@@ -1,8 +1,8 @@
-package com.arskgg.architecturemvvm.viewmodels;
+package com.arskgg.architecturemvvm.viewModels;
 
 import android.app.Application;
 
-import com.arskgg.architecturemvvm.data.model.Note;
+import com.arskgg.architecturemvvm.data.local.model.Note;
 import com.arskgg.architecturemvvm.repositories.NoteRepository;
 
 import androidx.lifecycle.AndroidViewModel;

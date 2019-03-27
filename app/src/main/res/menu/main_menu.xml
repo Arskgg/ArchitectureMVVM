@@ -3,8 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/goToGitProjects"
+        android:title="Go to Git Projects"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/deleteAllNotes"
         android:title="Delete all"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 
 </menu>

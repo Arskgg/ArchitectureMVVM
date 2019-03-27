@@ -1,6 +1,7 @@
-package com.arskgg.architecturemvvm.data.dao;
+package com.arskgg.architecturemvvm.data.local.dao;
 
-import com.arskgg.architecturemvvm.data.model.Note;
+
+import com.arskgg.architecturemvvm.data.local.model.Note;
 
 import java.util.List;
 
